@@ -10,7 +10,7 @@ class LineSplitStream extends stream.Transform {
 
   _transform(chunk, encoding, callback) {
     const isHasEOL = chunk.toString()
-                    .includes(os.EOL);
+      .includes(os.EOL);
     this.#lineBuff += chunk.toString();
     if (isHasEOL) {
       this.#lineBuff = this.#lineBuff.split(os.EOL);
